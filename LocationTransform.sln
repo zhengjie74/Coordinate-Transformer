@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35323.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationTransform", "LocationTransform.csproj", "{92AC7292-ABA5-43E0-BEB9-EF0A517F2879}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92AC7292-ABA5-43E0-BEB9-EF0A517F2879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92AC7292-ABA5-43E0-BEB9-EF0A517F2879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92AC7292-ABA5-43E0-BEB9-EF0A517F2879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92AC7292-ABA5-43E0-BEB9-EF0A517F2879}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E25A2AE-F297-4983-9DBE-4BDB1DB5C185}
+	EndGlobalSection
+EndGlobal
