@@ -49,6 +49,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 25);
             comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -115,6 +116,7 @@
             Ipt_Add.TabIndex = 8;
             Ipt_Add.Text = "添加";
             Ipt_Add.UseVisualStyleBackColor = true;
+            Ipt_Add.Click += Ipt_Add_Click;
             // 
             // label5
             // 

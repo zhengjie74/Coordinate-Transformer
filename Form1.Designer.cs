@@ -55,14 +55,15 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            comboBox_Ellipsoid = new ComboBox();
             groupBox2 = new GroupBox();
-            button6 = new Button();
+            Cal_ZoneNo = new TextBox();
+            button_save = new Button();
             button5 = new Button();
             button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            button_LO = new Button();
+            button_angXY = new Button();
+            button_angBL = new Button();
             label16 = new Label();
             textBox13 = new TextBox();
             Cal_Y = new TextBox();
@@ -86,6 +87,7 @@
             label17 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             deleteToolStripMenuItem = new ToolStripMenuItem();
+            DadiToZhijiao = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
@@ -156,6 +158,7 @@
             button_AddData.TabIndex = 2;
             button_AddData.Text = "添加坐标";
             button_AddData.UseVisualStyleBackColor = true;
+            button_AddData.Click += button_AddData_Click;
             // 
             // button_ImportFromFile
             // 
@@ -185,7 +188,7 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(comboBox_Ellipsoid);
             groupBox1.Location = new Point(23, 216);
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
@@ -323,24 +326,24 @@
             label2.TabIndex = 1;
             label2.Text = "选择";
             // 
-            // comboBox1
+            // comboBox_Ellipsoid
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "克拉索夫斯基椭球", "Bessel椭球", "西安80/1975国际椭球", "WGS-84椭球" });
-            comboBox1.Location = new Point(114, 25);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(123, 25);
-            comboBox1.TabIndex = 0;
+            comboBox_Ellipsoid.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_Ellipsoid.FormattingEnabled = true;
+            comboBox_Ellipsoid.Location = new Point(114, 25);
+            comboBox_Ellipsoid.Name = "comboBox_Ellipsoid";
+            comboBox_Ellipsoid.Size = new Size(123, 25);
+            comboBox_Ellipsoid.TabIndex = 0;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button6);
+            groupBox2.Controls.Add(Cal_ZoneNo);
+            groupBox2.Controls.Add(button_save);
             groupBox2.Controls.Add(button5);
             groupBox2.Controls.Add(button4);
-            groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(button1);
+            groupBox2.Controls.Add(button_LO);
+            groupBox2.Controls.Add(button_angXY);
+            groupBox2.Controls.Add(button_angBL);
             groupBox2.Controls.Add(label16);
             groupBox2.Controls.Add(textBox13);
             groupBox2.Controls.Add(Cal_Y);
@@ -361,14 +364,22 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "高斯投影正反算";
             // 
-            // button6
+            // Cal_ZoneNo
             // 
-            button6.Location = new Point(202, 175);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 18;
-            button6.Text = "存入";
-            button6.UseVisualStyleBackColor = true;
+            Cal_ZoneNo.Location = new Point(96, 143);
+            Cal_ZoneNo.Name = "Cal_ZoneNo";
+            Cal_ZoneNo.Size = new Size(29, 23);
+            Cal_ZoneNo.TabIndex = 19;
+            // 
+            // button_save
+            // 
+            button_save.Location = new Point(202, 175);
+            button_save.Name = "button_save";
+            button_save.Size = new Size(75, 23);
+            button_save.TabIndex = 18;
+            button_save.Text = "存入";
+            button_save.UseVisualStyleBackColor = true;
+            button_save.Click += button_save_Click;
             // 
             // button5
             // 
@@ -378,6 +389,7 @@
             button5.TabIndex = 17;
             button5.Text = "反算";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -387,33 +399,37 @@
             button4.TabIndex = 16;
             button4.Text = "正算";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
-            // button3
+            // button_LO
             // 
-            button3.Location = new Point(202, 276);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 15;
-            button3.Text = "LO";
-            button3.UseVisualStyleBackColor = true;
+            button_LO.Location = new Point(202, 276);
+            button_LO.Name = "button_LO";
+            button_LO.Size = new Size(75, 23);
+            button_LO.TabIndex = 15;
+            button_LO.Text = "LO";
+            button_LO.UseVisualStyleBackColor = true;
+            button_LO.Click += button_LO_Click;
             // 
-            // button2
+            // button_angXY
             // 
-            button2.Location = new Point(106, 276);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 14;
-            button2.Text = "XY收敛角";
-            button2.UseVisualStyleBackColor = true;
+            button_angXY.Location = new Point(106, 276);
+            button_angXY.Name = "button_angXY";
+            button_angXY.Size = new Size(75, 23);
+            button_angXY.TabIndex = 14;
+            button_angXY.Text = "XY收敛角";
+            button_angXY.UseVisualStyleBackColor = true;
+            button_angXY.Click += button_angXY_Click;
             // 
-            // button1
+            // button_angBL
             // 
-            button1.Location = new Point(10, 276);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 13;
-            button1.Text = "BL收敛角";
-            button1.UseVisualStyleBackColor = true;
+            button_angBL.Location = new Point(10, 276);
+            button_angBL.Name = "button_angBL";
+            button_angBL.Size = new Size(75, 23);
+            button_angBL.TabIndex = 13;
+            button_angBL.Text = "BL收敛角";
+            button_angBL.UseVisualStyleBackColor = true;
+            button_angBL.Click += button_angBL_Click;
             // 
             // label16
             // 
@@ -433,9 +449,9 @@
             // 
             // Cal_Y
             // 
-            Cal_Y.Location = new Point(66, 143);
+            Cal_Y.Location = new Point(133, 143);
             Cal_Y.Name = "Cal_Y";
-            Cal_Y.Size = new Size(171, 23);
+            Cal_Y.Size = new Size(104, 23);
             Cal_Y.TabIndex = 10;
             // 
             // Cal_X
@@ -478,11 +494,11 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(19, 146);
+            label14.Location = new Point(10, 146);
             label14.Name = "label14";
-            label14.Size = new Size(15, 17);
+            label14.Size = new Size(80, 17);
             label14.TabIndex = 4;
-            label14.Text = "Y";
+            label14.Text = "Y(带号+坐标)";
             // 
             // label13
             // 
@@ -588,12 +604,23 @@
             deleteToolStripMenuItem.Size = new Size(100, 22);
             deleteToolStripMenuItem.Text = "删除";
             // 
+            // DadiToZhijiao
+            // 
+            DadiToZhijiao.Location = new Point(413, 30);
+            DadiToZhijiao.Name = "DadiToZhijiao";
+            DadiToZhijiao.Size = new Size(227, 23);
+            DadiToZhijiao.TabIndex = 8;
+            DadiToZhijiao.Text = "参心大地坐标系转换为参心直角坐标系";
+            DadiToZhijiao.UseVisualStyleBackColor = true;
+            DadiToZhijiao.Click += DadiToZhijiao_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(670, 780);
+            Controls.Add(DadiToZhijiao);
             Controls.Add(label17);
             Controls.Add(listView2);
             Controls.Add(groupBox2);
@@ -644,7 +671,7 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox comboBox_Ellipsoid;
         private ListView listView2;
         private ColumnHeader Gps_GaussNO;
         private ColumnHeader Gps_GaussName;
@@ -666,13 +693,15 @@
         private Label label14;
         private Label label13;
         private Label label17;
-        private Button button1;
-        private Button button6;
+        private Button button_angBL;
+        private Button button_save;
         private Button button5;
         private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button button_LO;
+        private Button button_angXY;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem deleteToolStripMenuItem;
+        private TextBox Cal_ZoneNo;
+        private Button DadiToZhijiao;
     }
 }

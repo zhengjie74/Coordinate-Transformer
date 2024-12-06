@@ -30,15 +30,15 @@ namespace LocationTransform
         public double PolarCurvatureRadius { get; set; }
 
         // 构造函数
-        public Spheroid(string name, double semiMajorAxis, double semiMinorAxis, double firstEccentricity, double secondEccentricity, double flattening, double polarCurvatureRadius)
+        public Spheroid(string name, double semiMajorAxis, double semiMinorAxis)
         {
             Name = name;
             SemiMajorAxis = semiMajorAxis;
             SemiMinorAxis = semiMinorAxis;
-            FirstEccentricity = firstEccentricity;
-            SecondEccentricity = secondEccentricity;
-            Flattening = flattening;
-            PolarCurvatureRadius = polarCurvatureRadius;
+            FirstEccentricity = Math.Round(Math.Pow((Math.Sqrt(semiMajorAxis*semiMajorAxis-semiMinorAxis*semiMinorAxis)/semiMajorAxis),2),9);
+            SecondEccentricity = Math.Round(Math.Pow((Math.Sqrt(semiMajorAxis * semiMajorAxis - semiMinorAxis * semiMinorAxis) / semiMinorAxis),2),9);
+            Flattening = Math.Round(((semiMajorAxis-semiMinorAxis)/semiMajorAxis),9);
+            PolarCurvatureRadius = Math.Round(((semiMajorAxis * semiMajorAxis) / semiMinorAxis), 9);
         }
     }
 }

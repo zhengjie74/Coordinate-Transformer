@@ -25,23 +25,23 @@ namespace LocationTransform
                 Remark = remark;
             }
         }
+        public class Location
+        {
+            public string PointName { get; set; }
+            public double X { get; set; }
+            public double Y { get; set; }
+            public double XO { get; set; }
+            public double YO { get; set; }
 
-        /*public static List<Coordinate> coordinates = new List<Coordinate>();
-        public static List<Coordinate> Coordinates
-        {
-            get { return coordinates; }
+            public Location(string pointName, double x, double y, double xo, double yo)
+            {
+                PointName = pointName;
+                X = x;
+                Y = y;
+                XO = xo;
+                YO = yo;
+            }
         }
-        public static void AddCoordinate(Coordinate coordinate)
-        {
-            coordinates.Add(coordinate);
-        }
-        public static void RemoveCoordinate(Coordinate coordinate)
-        {
-            coordinates.Remove(coordinate);
-        }
-        public static void ClearCoordinates()
-        {
-            coordinates.Clear();
-        }*/
+        
     }
 }
