@@ -77,12 +77,14 @@
             数据库视图ToolStripMenuItem.Name = "数据库视图ToolStripMenuItem";
             数据库视图ToolStripMenuItem.Size = new Size(184, 22);
             数据库视图ToolStripMenuItem.Text = "数据库视图";
+            数据库视图ToolStripMenuItem.Click += 数据库视图ToolStripMenuItem_Click;
             // 
             // 文件读入树状视图ToolStripMenuItem
             // 
             文件读入树状视图ToolStripMenuItem.Name = "文件读入树状视图ToolStripMenuItem";
             文件读入树状视图ToolStripMenuItem.Size = new Size(184, 22);
             文件读入树状视图ToolStripMenuItem.Text = "文件读入树状视图";
+            文件读入树状视图ToolStripMenuItem.Click += 文件读入树状视图ToolStripMenuItem_Click;
             // 
             // 退出ToolStripMenuItem
             // 

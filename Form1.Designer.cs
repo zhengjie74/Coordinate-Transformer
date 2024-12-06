@@ -87,7 +87,6 @@
             label17 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             deleteToolStripMenuItem = new ToolStripMenuItem();
-            DadiToZhijiao = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
@@ -604,23 +603,12 @@
             deleteToolStripMenuItem.Size = new Size(100, 22);
             deleteToolStripMenuItem.Text = "删除";
             // 
-            // DadiToZhijiao
-            // 
-            DadiToZhijiao.Location = new Point(413, 30);
-            DadiToZhijiao.Name = "DadiToZhijiao";
-            DadiToZhijiao.Size = new Size(227, 23);
-            DadiToZhijiao.TabIndex = 8;
-            DadiToZhijiao.Text = "参心大地坐标系转换为参心直角坐标系";
-            DadiToZhijiao.UseVisualStyleBackColor = true;
-            DadiToZhijiao.Click += DadiToZhijiao_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(670, 780);
-            Controls.Add(DadiToZhijiao);
             Controls.Add(label17);
             Controls.Add(listView2);
             Controls.Add(groupBox2);
@@ -702,6 +690,5 @@
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem deleteToolStripMenuItem;
         private TextBox Cal_ZoneNo;
-        private Button DadiToZhijiao;
     }
 }
